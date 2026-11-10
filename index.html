@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173b67">
+  <title>Meu Plano de Estudos — Concurso UFMS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">PLANO DE PREPARAÇÃO • 12 SEMANAS</p>
+      <h1>Rumo à aprovação</h1>
+      <p class="subtitle">Concurso UFMS — Técnico em Educação | Processos Educacionais / Assuntos Estudantis</p>
+      <div class="hero-stats">
+        <div><strong>72h</strong><span>de estudo planejadas</span></div>
+        <div><strong>36</strong><span>encontros</span></div>
+        <div><strong>12</strong><span>semanas</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="overview card">
+      <div class="section-heading">
+        <div><p class="eyebrow dark">ACOMPANHAMENTO</p><h2>Seu progresso</h2></div>
+        <span id="progressLabel" class="progress-label">0% concluído</span>
+      </div>
+      <div class="progress-track"><div id="overallProgress" class="progress-fill"></div></div>
+      <p id="progressDetail" class="muted">0 de 36 encontros concluídos</p>
+    </section>
+
+    <nav class="tabs" aria-label="Navegação principal">
+      <button class="tab active" data-tab="schedule">Cronograma</button>
+      <button class="tab" data-tab="performance">Desempenho</button>
+      <button class="tab" data-tab="notes">Anotações</button>
+    </nav>
+
+    <section id="schedulePanel" class="panel">
+      <div class="layout">
+        <aside class="card weeks-card">
+          <div class="section-heading"><h2>Semanas</h2><span class="muted small">12 etapas</span></div>
+          <div id="weekList" class="week-list"></div>
+        </aside>
+        <div class="card detail-card">
+          <div class="section-heading week-title-row">
+            <div><p id="weekEyebrow" class="eyebrow dark">SEMANA 01</p><h2 id="weekTitle">Fundamentos</h2></div>
+            <span id="weekProgress" class="chip">0/3 concluídos</span>
+          </div>
+          <div id="sessionList" class="session-list"></div>
+          <div class="study-method">
+            <h3>Como organizar cada encontro (2 horas)</h3>
+            <div class="method-grid">
+              <div><b>10 min</b><span>Revisão anterior</span></div>
+              <div><b>45 min</b><span>Estudo teórico</span></div>
+              <div><b>25 min</b><span>Resumo ou mapa mental</span></div>
+              <div><b>30 min</b><span>Questões</span></div>
+              <div><b>10 min</b><span>Correção e registro</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="performancePanel" class="panel hidden">
+      <div class="card">
+        <p class="eyebrow dark">VISÃO GERAL</p><h2>Desempenho por semana</h2>
+        <div id="performanceList" class="performance-list"></div>
+      </div>
+    </section>
+
+    <section id="notesPanel" class="panel hidden">
+      <div class="card notes-card">
+        <p class="eyebrow dark">REGISTRO DE APRENDIZAGEM</p><h2>Minhas anotações</h2>
+        <p class="muted">Registre dúvidas, dificuldades e assuntos que precisam ser revisados.</p>
+        <form id="noteForm">
+          <label for="noteWeek">Semana</label>
+          <select id="noteWeek"></select>
+          <label for="noteSubject">Assunto</label>
+          <input id="noteSubject" type="text" placeholder="Ex.: Lei 8.112/1990 — deveres" required>
+          <label for="noteText">Anotação</label>
+          <textarea id="noteText" rows="4" placeholder="O que preciso revisar? Quais dúvidas ficaram?" required></textarea>
+          <button class="primary-btn" type="submit">Salvar anotação</button>
+        </form>
+        <div id="notesList" class="notes-list"></div>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="printBtn" class="secondary-btn">Imprimir cronograma</button>
+      <button id="resetBtn" class="text-btn">Zerar progresso</button>
+    </div>
+    <p class="footnote">O progresso e as anotações ficam salvos neste navegador, neste dispositivo.</p>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
